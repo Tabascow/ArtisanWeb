@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Setting = require('./setting.model');
+var Setting = require('./website.model.js');
 
 // Get list of settings
 exports.index = function(req, res) {
@@ -11,7 +11,7 @@ exports.index = function(req, res) {
   });
 };
 
-// Get a single setting
+// Get a single website
 exports.show = function(req, res) {
   Setting.findById(req.params.id, function (err, setting) {
     if(err) { return handleError(res, err); }
@@ -20,7 +20,7 @@ exports.show = function(req, res) {
   });
 };
 
-// Creates a new setting in the DB.
+// Creates a new website in the DB.
 exports.create = function(req, res) {
   Setting.create(req.body, function(err, setting) {
     if(err) { return handleError(res, err); }
@@ -28,7 +28,7 @@ exports.create = function(req, res) {
   });
 };
 
-// Updates an existing setting in the DB.
+// Updates an existing website in the DB.
 exports.update = function(req, res) {
   if(req.body._id) { delete req.body._id; }
   Setting.findById(req.params.id, function (err, setting) {
@@ -42,7 +42,7 @@ exports.update = function(req, res) {
   });
 };
 
-// Deletes a setting from the DB.
+// Deletes a website from the DB.
 exports.destroy = function(req, res) {
   Setting.findById(req.params.id, function (err, setting) {
     if(err) { return handleError(res, err); }
