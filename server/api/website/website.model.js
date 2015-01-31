@@ -8,7 +8,8 @@ var SettingSchema = new Schema({
   description: String,
   address: String,
   contactPhoneNumber:String,
-  contactEmailAddress:String
+  contactEmail:String,
+  createdAt:{type:String,default:Date.now}
 });
 
-module.exports = mongoose.model('Setting', SettingSchema);
+module.exports = mongoose.model('Website', SettingSchema);

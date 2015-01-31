@@ -1,0 +1,9 @@
+<div class="col-md-12">
+<h3 ng-show="websites.length ===0"> Il n'existe pas de site web pour le moment.
+  <br>Il est temps d'un <a ui-sref="create website" class="btn btn-primary btn-lg">ajouter un</a></h3>
+
+<div ng-hide="websites.length === 0">
+  <a ui-sref="create website" class="btn btn-primary">Nouveau site</a>
+  <div ui-grid="gridOptions"  external-scopes="$scope"></div>
+</div>
+</div>
