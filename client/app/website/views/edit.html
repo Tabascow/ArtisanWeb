@@ -1,4 +1,9 @@
 <div class="col-md-12">
+  <ul class="breadcrumb">
+    <li><a ui-sref="main">Admin</a></li>
+    <li><a ui-sref="all websites">Sites web</a></li>
+    <li class="active">Mise à jour : {{website.name}}</li>
+  </ul>
   <form class="form-horizontal" name="form" ng-submit="updateWebsite()" novalidate>
     <div ng-include="'app/website/views/form.html'"></div>
   </form>

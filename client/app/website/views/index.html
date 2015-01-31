@@ -1,6 +1,12 @@
 <div class="col-md-12">
+  <ul class="breadcrumb">
+    <li><a ui-sref="main">Admin</a></li>
+    <li><a ui-sref="all websites">Sites web</a></li>
+    <li class="active">Nouveau : {{website.name}}</li>
+  </ul>
 <h1>Nom du site web: {{website.name}}</h1>
   <p>Description: {{website.description}}</p>
-<p>Email: {{website.contactEmailAddress}}</p>
+  <p>Adresse: {{website.address}}</p>
+<p>Email: {{website.contactEmail}}</p>
   <p>Telephone: {{website.contactPhoneNumber}}</p>
 </div>

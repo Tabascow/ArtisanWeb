@@ -6,7 +6,8 @@ angular.module('artisanWebApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ui.grid'
+  'ui.grid',
+  'ngMessages'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

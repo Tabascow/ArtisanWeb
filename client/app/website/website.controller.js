@@ -5,18 +5,19 @@ angular.module('artisanWebApp')
     $scope.websites = Website.query();
     $scope.$scope = $scope;
 
-    var editTemplate= '<button id="editBtn" type="button" class="btn-small" ui-sref="edit website({id:row.entity._id})" >Edit</button> '
-    var deleteTemplate='<button id="deleteBtn" type="button" clas="btn-small" ng-click="getExternalScopes().deleteWebsite($event,row.entity)">Delete</button>';
+    var viewTemplate = '<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><a ui-sref="view website({id:row.entity._id})">{{row.entity.name}}</a></div>';
+    var editTemplate= '<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><button id="editBtn" type="button" class="btn btn-default btn-xs" ui-sref="edit website({id:row.entity._id})" >Edit</button> </div>'
+    var deleteTemplate='<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><button id="deleteBtn" type="button" class="btn btn-default btn-xs" ng-click="getExternalScopes().deleteWebsite($event,row.entity)">Delete</button></div>';
     $scope.gridOptions={
       columnDefs :[
-        {field:"name",displayName:"Nom"},
+        {field:"name",displayName:"Nom", cellTemplate:viewTemplate},
         {field:"description",displayName:"Description"},
         {field:"address",displayName:"Adresse"},
         {field:"contactEmail",displayName:"Email"},
         {field:"contactPhoneNumber",displayName:"Télephone"},
-        {field:"createdAt",displayName:"Date de création",cellFilter: 'date:\'dd/MM/yyyy\'' },
-        {name: 'edit', displayName: '', cellTemplate: editTemplate},
-        {name: 'delete', displayName: '', cellTemplate: deleteTemplate}
+        {field:"createdAt",displayName:"Date de création", cellFilter: 'date:\'dd/MM/yyyy\'' },
+        {name: 'edit', displayName: '', cellTemplate: editTemplate, width:'70'},
+        {name: 'delete', displayName: '', cellTemplate: deleteTemplate, width:'70'}
 
       ],
       data:$scope.websites
