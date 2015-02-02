@@ -7,7 +7,8 @@ angular.module('artisanWebApp', [
   'ui.router',
   'ui.bootstrap',
   'ui.grid',
-  'ngMessages'
+  'ngMessages',
+  'toggle-switch'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

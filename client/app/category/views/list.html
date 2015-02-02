@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <ul class="breadcrumb">
+    <li><a ui-sref="main">Admin</a></li>
+    <li class="active">Categories</li>
+  </ul>
+
+
+<h3 ng-show="categories.length ===0"> Il n'existe pas de categories pour le moment.
+  <br>Il est temps d'un <a ui-sref="create category" class="btn btn-primary btn-lg">ajouter une</a></h3>
+
+<div ng-hide="categories.length === 0">
+  <h1>Liste des categories <a ui-sref="create category" class="btn btn-primary pull-right">Nouvelle catégorie</a></h1>
+  <div ui-grid="gridOptions"  external-scopes="$scope"></div>
+</div>
+</div>

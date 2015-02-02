@@ -1,0 +1,10 @@
+<div class="col-md-12">
+  <ul class="breadcrumb">
+    <li><a ui-sref="main">Admin</a></li>
+    <li><a ui-sref="all Categories">Catégories</a></li>
+    <li class="active">Mise à jour : {{category.name}}</li>
+  </ul>
+  <form class="form-horizontal" name="form" ng-submit="updateCategory()" novalidate>
+    <div ng-include="'app/category/views/form.html'"></div>
+  </form>
+</div>
