@@ -6,8 +6,8 @@ angular.module('artisanWebApp')
     $scope.$scope = $scope;
 
     var viewTemplate = '<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><a ui-sref="view website({id:row.entity._id})">{{row.entity.name}}</a></div>';
-    var editTemplate= '<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><button id="editBtn" type="button" class="btn btn-default btn-xs" ui-sref="edit website({id:row.entity._id})" >Edit</button> </div>'
-    var deleteTemplate='<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><button id="deleteBtn" type="button" class="btn btn-default btn-xs" ng-click="getExternalScopes().deleteWebsite($event,row.entity)">Delete</button></div>';
+    var editTemplate= '<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><button id="editBtn" type="button" class="btn btn-default btn-xs" ui-sref="edit website({id:row.entity._id})" >Modifier</button> </div>'
+    var deleteTemplate='<div class="ui-grid-cell-contents ng-binding ng-scope text-center"><button id="deleteBtn" type="button" class="btn btn-default btn-xs" ng-click="getExternalScopes().deleteWebsite($event,row.entity)">Supprimer</button></div>';
     $scope.gridOptions={
       columnDefs :[
         {field:"name",displayName:"Nom", cellTemplate:viewTemplate},

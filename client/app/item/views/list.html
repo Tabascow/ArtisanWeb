@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <ul class="breadcrumb">
+    <li><a ui-sref="main">Admin</a></li>
+    <li class="active">Projets</li>
+  </ul>
+
+
+<h3 ng-show="items.length ===0"> Il n'existe pas de projet pour le moment.
+  <br>Il est temps d'un <a ui-sref="create item" class="btn btn-primary btn-lg">ajouter un</a></h3>
+
+<div ng-hide="items.length === 0">
+  <h1>Liste des projets <a ui-sref="create item" class="btn btn-primary pull-right">Nouveau projet</a></h1>
+  <div ui-grid="gridOptions"  external-scopes="$scope"></div>
+</div>
+</div>
