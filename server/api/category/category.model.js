@@ -6,7 +6,8 @@ var mongoose = require('mongoose'),
 var CategorySchema = new Schema({
   name: String,
   info: String,
-  active: Boolean
+  active: Boolean,
+  items:[{type:Schema.Types.ObjectId,ref:'Item'}]
 });
 
 module.exports = mongoose.model('Category', CategorySchema);

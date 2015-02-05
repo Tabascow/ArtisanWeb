@@ -8,7 +8,8 @@ angular.module('artisanWebApp', [
   'ui.bootstrap',
   'ui.grid',
   'ngMessages',
-  'toggle-switch'
+  'toggle-switch',
+  'checklist-model'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider

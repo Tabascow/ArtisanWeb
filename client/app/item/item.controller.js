@@ -36,8 +36,13 @@ angular.module('artisanWebApp')
 
   })
 
-  .controller('ItemCreateController', function ($scope, Item,$state) {
+  .controller('ItemCreateController', function ($scope, Item,Category,$state) {
+    $scope.categories = Category.query();
     $scope.item = new Item();
+    $scope.item.categories = [];
+
+
+
 
     $scope.createItem = function () {
       $scope.item.$save(function () {
@@ -52,8 +57,12 @@ angular.module('artisanWebApp')
       $scope.opened = true;
     };
   })
-  .controller('ItemEditController', function ($scope, Item, $stateParams,$state) {
+  .controller('ItemEditController', function ($scope, Item,Category, $stateParams,$state) {
+    $scope.categories = Category.query();
+
     $scope.item = Item.get({id: $stateParams.id});
+
+
 
     $scope.updateItem = function () {
       $scope.item.$update(function () {
